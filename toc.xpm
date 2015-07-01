@@ -1,0 +1,298 @@
+/* XPM */
+
+static const char *bargraph_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"....................",
+	"....................",
+	"...X................",
+	".XXX.........BBB....",
+	"...X.........BBB....",
+	"...X.........BBB....",
+	".XXX.........BBB....",
+	"...X...RRR...BBB....",
+	"...X...RRR...BBB....",
+	".XXX...RRR...BBB....",
+	"...X...RRR...BBB....",
+	"...X...RRR...BBB....",
+	"...XXXXXXXXXXXXXXXX.",
+	"....................",
+	"...................."
+};
+
+static const char *blank_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"     1    1        1            1",
+	/* colors */
+	". c None",
+	/* pixels */
+	"."
+};
+
+static const char *calendar_xpm[] = {
+	/* width height num_colors chars_per_pixel */
+	"    26    24        4            1",
+	/* colors */
+	". c None",
+	"# c #000000",
+	"a c #f0f000",
+	"b c #00ffff",
+	/* pixels */
+	"..........................",
+	".########################.",
+	".########################.",
+	".##aaaaaaaaaaaaaaaaaaaa##.",
+	".##aaaaaaaaaaaaaaaaaaaa##.",
+	".########################.",
+	".########################.",
+	".##bbbbbbbb#bb#bb#bb#bb##.",
+	".##bbbbbbbb#bb#bb#bb#bb##.",
+	".########################.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".########################.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".########################.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".##bb#bb#bb#bb#bb#bb#bb##.",
+	".########################.",
+	".##bb#bb#bb#bb#bb#bbbbb##.",
+	".##bb#bb#bb#bb#bb#bbbbb##.",
+	".########################.",
+	".########################.",
+	".........................."
+};
+
+
+static const char *direction_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    21    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"..........X..........",
+	"..........X...RRR....",
+	"..........X....R.R...",
+	"..........X...R...R..",
+	"..........X..R.......",
+	"..........X.R........",
+	"..........XR.........",
+	"XXXXXXXXXXXXXXXXXXXXX",
+	".........BXG.........",
+	"........B.X.G........",
+	".......B..X..G.......",
+	"......B...X...G.G....",
+	"...BBB....X....GG....",
+	"....B.B...X...GGG....",
+	"...B...B..X.........."
+};
+
+static const char *document_xpm[] =
+{
+	"12 16 6 1",
+	" 	c #040404",
+	".	c None",
+	"X	c white",
+	"o	c #808304",
+	"O	c black",
+	"+	c #f3f7f3",
+	"       .....",
+	" XXXXX  ....",
+	" XXXXX X ...",
+	" XXXXX XX ..",
+	" XooXX    O.",
+	" X+XXX+XXXO.",
+	" XXXXXXXXXO.",
+	" XoooXooXXO.",
+	" XXXXXXXXXO.",
+	" XXXXXXXXXO.",
+	" XoXXoooXXO.",
+	" XXXXXXXXXO.",
+	"OXXXXXXXXXO.",
+	"OXXXXXXXXXO.",
+	"OOOOOOOOOOO.",
+	"............"
+};
+
+static const char *input_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    11        6            1",
+	/* colors */
+	"W c #ffffff",
+	"L c #dfdfdf",
+	". c #afafaf",
+	"S c #6f6f6f",
+	"b c #4f4f4f",
+	"B c #2f2f2f",
+	/* pixels */
+	"bbbbbbbbbbbbbbbbbbbb",
+	"b..................B",
+	"b......SSSSSSSSSSS.B",
+	"b......SWWWWWWWWWL.B",
+	"b.SSSS.SLLLLLLLLLL.B",
+	"b..................B",
+	"b......SSSSSSSSSSS.B",
+	"b......SWWWWWWWWWL.B",
+	"b.SSSS.SLLLLLLLLLL.B",
+	"b..................B",
+	"bBBBBBBBBBBBBBBBBBBB"
+};
+
+static const char *haulchart_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"...XR.R.R...........",
+	".XXXR.R.R...........",
+	"...XR.R..R..........",
+	"...XR..R.R..........",
+	".XXX.R.R.R..........",
+	"...X.R.R..R.........",
+	"...X.R.R...RRRR.....",
+	".XXX.R..R.....RRRRR.",
+	"...X.R...RRRR.......",
+	"...X.RR.....RRRRRRR.",
+	".XXX..RRRR..........",
+	"...X.....RRRRRRRRRR.",
+	"...XXXXXXXXXXXXXXXXX",
+	"......X...X...X...X.",
+	"......X...X...X...X."
+};
+
+static const char *linegraph_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"...X................",
+	".XXX..........RRRR..",
+	"...X........RR......",
+	"...X.......R........",
+	".XXX.......R........",
+	"...X......R.........",
+	"...X......R.........",
+	".XXX.....R..........",
+	"...X.....R..........",
+	"...X...RR...........",
+	".XXXRRR.............",
+	"...X................",
+	"...XXXXXXXXXXXXXXXXX",
+	"......X...X...X...X.",
+	"......X...X...X...X."
+};
+
+static const char *list_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"....................",
+	"....................",
+	"....................",
+	"..RRRRR...RRRRRRRR..",
+	"....................",
+	"....................",
+	"....................",
+	"..RRRRR...RRRRRRRR..",
+	"....................",
+	"....................",
+	"....................",
+	"..RRRRR...RRRRRRRR..",
+	"....................",
+	"....................",
+	"...................."
+};
+
+
+static const char *shape_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    21    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"...GGG....X..........",
+	"...GG.....R..........",
+	"...G.G...RXR.........",
+	"......G.R.X.R........",
+	".......R..X..R.......",
+	"......R.G.X...R......",
+	"......R..GX...R......",
+	"XXXXXXRXXXXXXXRXXXXXX",
+	".......R.BX..R.......",
+	"........RRRRR........",
+	".......B..X..........",
+	"......B...X..........",
+	"...BBB....X..........",
+	"....B.B...X..........",
+	"...B...B..X.........."
+};
+
+static const char *table_xpm[] =
+{
+	/* width height num_colors chars_per_pixel */
+	"    20    15        5            1",
+	/* colors */
+	". c None",
+	"X c #000000",
+	"R c #ff0000",
+	"G c #00ff00",
+	"B c #0000ff",
+	/* pixels */
+	"....................",
+	".......X..RRR..RRR..",
+	".......X............",
+	".......X............",
+	".XXXXXXXXXXXXXXXXXX.",
+	".......X............",
+	".......X............",
+	".......X............",
+	"..RRR..X..BBB..BBB..",
+	".......X............",
+	".......X............",
+	".......X............",
+	"..RRR..X..BBB..BBB..",
+	".......X............",
+	"...................."
+};
+
+/* End of toc.xpm */

@@ -1,0 +1,745 @@
+<HTML>
+  <HEAD>
+    <TITLE>BehavePlus Tree Species Bark Thickness & Mortality Equations Page</TITLE>
+  </HEAD>
+  <BODY>
+    <TABLE WIDTH="100%">
+      <TR>
+        <TD width="100">
+          <IMG SRC="logo90x90.png" ALT="BehavePlus Logo">
+        </TD>
+        <TD ALIGN="left" VALIGN="center">
+          <H2><FONT COLOR="#ff5500">Tree Species Bark Thickness & Mortality Equations</FONT></H2>
+        </TD>
+      </TR>
+    </TABLE>
+    <HR>
+<P>
+
+Tree species is used in the BehavePlus MORTALITY and SPOT modules.
+There are, however, many more species available for MORTALITY than for SPOT.
+To avoid confusion, there are two tree species variables:
+<UL>
+  <LI><strong>Spot tree species</strong>, and</LI>
+  <LI><strong>Mortality tree species</strong>.</LI>
+</UL>
+The same tree species codes are used for both variables.
+The table below lists all tree species available to the MORTALITY module.
+The tree species available to the SPOT module are listed in
+<UL>
+      <LI><A HREF="vTreeSpeciesSpot.html">Spot Tree Species</A></LI>
+</UL>
+<P><b>Bark thickness</b> is estimated from the tree species and D.B.H. using equations in FOFEM 5.9: First Order Fire Effects Model (Reinhardt, E.D., R.E. Keane, and J.K. Brown, 1997).
+<p>New <b>tree mortality</b> equations are from  JFSP Report #05-2-1-105 <i>Delayed Tree Mortality following Fire in Western Conifers</i> (Hood, S., S. Smith, D. Cluck, E. Reinhardt, and K. Ryan, 2008).
+<P> Each tree species has a <b>bark thickness equation</b> and a <b>mortality equation</b> associated with it. These are summarized in the tables below. <br>
+
+<p><A NAME="Table1"></a>
+<B>Predicted Probability of Tree Mortality Equations</B><br>
+Pm = Probability of Mortality (frac); BT = Bark Thickness (cm); CLS = Crown Length Scorched (%); CVS = Crown Volume Scorched (%); DBH = Diameter at Breast height (cm)<p>
+<TABLE border="1" cellspacing="0" cellpadding="5">
+  <TR bgcolor="#CCCCCC">
+    <TH ALIGN=LEFT>Mortality<br>Equation</TH>
+    <TH ALIGN=LEFT>Scientific Name</TH>
+    <TH ALIGN=LEFT>Common Name</TH>
+    <TH ALIGN=LEFT>Mortality Equation</TH>
+  </TR>
+<TR>
+  <TD ALIGN=CENTER>1</TD>
+  <TD><I>&nbsp;</I></TD>
+  <TD>Non-Spruce, unless<br>listed below</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-1.941 + 6.316 * (1.0 - exp(-BT)) - 5.35 * CVS<sup>2</sup>)]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>3</TD>
+  <TD><I>&nbsp;</I></TD>
+  <TD>Spruce, unless<br>listed below</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-1.941 + 6.316 * (1.0 - exp(-BT)) - 5.35 * CVS<sup>2</sup>)];<br>&nbsp;&nbsp;&nbsp;&nbsp; if <i>P<sub>m</sub></i> &lt; 0.8, then <i>P<sub>m</sub></i> = 0.8</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>4</TD>
+  <TD><I>Abies concolor</I></TD>
+  <TD>White fir</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-3.5083 + (0.0956 * CLS) - (0.00184 * CLS<sup>2</sup>) + (0.000017 * CLS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>5</TD>
+  <TD><I>Abies magnifica</I></TD>
+  <TD>Red fir </TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-2.3085 + (0.000004059 * CLS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>6</TD>
+  <TD><I>Libocedrus decurrens</I></TD>
+  <TD>Incense cedar </TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-4.2466 + (0.000007172 * CLS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>7</TD>
+  <TD><I>Pinus lambertiana</I></TD>
+  <TD>Sugar pine </TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-2.0588 + (0.000814 * CLS<sup>2</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>8</TD>
+  <TD><I>Abies lasiocarpa</I> / <br><i>Abies grandis</i></TD>
+  <TD>Subalpine fir / <br>Grand fir</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-1.6950 + (0.2071 * CVS) - (0.0047 * CVS<sup>2</sup>) + (0.000035 * CVS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>9</TD>
+  <TD><I>Picea engelmannii</I></TD>
+  <TD>Engelmann spruce</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(0.0845 + (0.0445 * CVS)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>10</TD>
+  <TD><I>Pinus ponderosa</I> / <br><i>Pinus jeffreyi</i></TD>
+  <TD>Ponderosa pine / <br>Jeffrey pine</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-2.7103 + (0.000004093 * CVS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>11</TD>
+  <TD><I>Pseudotsuga menziesii</I></TD>
+  <TD>Douglas-fir</TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-2.0346 + (0.0906 * CVS) - (0.0022 * CVS<sup>2</sup>) + (0.000019 * CVS<sup>3</sup>)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>12</TD>
+  <TD><I>Larix occidentalis</I></TD>
+  <TD>Western larch </TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-1.6594 + (0.0327 * CVS) - (0.0489 * DBH)))]</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>13</TD>
+  <TD><I>Pinus albicaulis</I> / <br><i>Pinus contorta</i></TD>
+  <TD>Whitebark pine / <br>Lodgepole pine </TD>
+  <TD ALIGN=LEFT><i>P<sub>m</sub></i> = 1/[1 + exp(-(-0.3268 + (0.1387 * CVS) - (0.0033 * CVS<sup>2</sup>) + (0.000025 * CVS<sup>3</sup>) - (0.0266 * DBH)))]</TD>
+</TR>
+</TABLE>
+
+<p><p><A NAME="Table2"></a>
+<B>Summary Inputs to Predicted Probability of Fire Mortality Equations</B><br>
+<TABLE border="1" cellspacing="0" cellpadding="3">
+<TR bgcolor="#CCCCCC">
+  <TH ALIGN=LEFT>Mortality <br>
+    Equation</TH>
+   <TH ALIGN=LEFT>Scientific Name</TH>
+   <TH ALIGN=LEFT>Common Name(s)</TH>
+   <TH ALIGN=CENTER>Bark<br>Thickness<br>(BT)</TH>
+   <TH ALIGN=CENTER>D. B.H.</TH>
+   <TH ALIGN=CENTER>Crown<br>Length<br>Scorched<br>(CLS)</TH>
+   <TH ALIGN=CENTER>Crown<br>Volume<br>Scorched<br>(CVS)</TH>
+</TR>
+<TR>
+<TR>
+  <TD ALIGN=CENTER>1</TD>
+  <TD><I>&nbsp;</I></TD>
+  <TD>Non-Spruce, unless<br>listed below</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>3</TD>
+  <TD><I>&nbsp;</I></TD>
+  <TD>Spruce, unless<br>listed below</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>4</TD>
+  <TD><I>Abies concolor</I></TD>
+  <TD>White fir</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>5</TD>
+  <TD><I>Abies magnifica</I></TD>
+  <TD>Red fir </TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>6</TD>
+  <TD><I>Libocedrus decurrens</I></TD>
+  <TD>Incense cedar </TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>7</TD>
+  <TD><I>Pinus lambertiana</I></TD>
+  <TD>Sugar pine </TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>8</TD>
+  <TD><I>Abies lasiocarpa</I> / <br><i>Abies grandis</i></TD>
+  <TD>Subalpine fir / <br>Grand fir</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>9</TD>
+  <TD><I>Picea engelmannii</I></TD>
+  <TD>Engelmann spruce</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>10</TD>
+  <TD><I>Pinus ponderosa</I> / <br><i>Pinus jeffreyi</i></TD>
+  <TD>Ponderosa pine / <br>Jeffrey pine</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>11</TD>
+  <TD><I>Pseudotsuga menziesii</I></TD>
+  <TD>Douglas-fir</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>12</TD>
+  <TD><I>Larix occidentalis</I></TD>
+  <TD>Western larch </TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+<TR>
+  <TD ALIGN=CENTER>13</TD>
+  <TD><I>Pinus albicaulis</I> / <br><i>Pinus contorta</i></TD>
+  <TD>Whitebark pine / <br>Lodgepole pine </TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+  <TD ALIGN=CENTER>&nbsp;</TD>
+  <TD ALIGN=CENTER>X</TD>
+</TR>
+</TABLE>
+
+
+<p><p><A NAME="Table3"></a>
+<B>Tree Species Bark Thickness & Mortality Equations</B><br>
+<TABLE border="1" cellspacing="0" cellpadding="3">
+  <TR bgcolor="#CCCCCC"><TH ALIGN=LEFT>Abbrev<TH ALIGN=LEFT>Scientific Name<TH ALIGN=LEFT>Common Name(s)
+    <TH ALIGN=RIGHT>Mort Eq<TH ALIGN=RIGHT>Bark Eq</TR>
+<TR><TD>ABIAMA</TD><TD><I>Abies amabilis</I></TD>               <TD>Pacific silver fir</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 26</TD></TR>
+<TR><TD>ABIBAL</TD><TD><I>Abies balsamea</I></TD>               <TD>Balsam fir</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>ABICON</TD><TD><I>Abies concolor</I></TD>               <TD>White fir</TD>
+    <TD ALIGN=CENTER> 4  </TD>
+    <TD ALIGN=CENTER> 27</TD></TR>
+<TR><TD>ABIGRA</TD><TD><I>Abies grandis</I></TD>                <TD>Grand fir</TD>
+    <TD ALIGN=CENTER> 8  </TD>
+    <TD ALIGN=CENTER> 25</TD></TR>
+<TR><TD>ABILAS</TD><TD><I>Abies lasiocarpa</I></TD>             <TD>Subalpine fir</TD>
+    <TD ALIGN=CENTER> 8  </TD>
+    <TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>ABIMAG</TD><TD><I>Abies magnifica</I></TD>              <TD>Red fir</TD>
+    <TD ALIGN=CENTER> 5  </TD>
+    <TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>ABIPRO</TD><TD><I>Abies procera</I></TD>                <TD>Noble fir</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>ABISPP</TD><TD><I>Abies species</I></TD>                <TD>Firs</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 30</TD></TR>
+<TR><TD>ACEBAR</TD><TD><I>Acer barbatum</I></TD>                <TD>Florida maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>ACELEU</TD><TD><I>Acer leucoderme</I></TD>              <TD>Chalk maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>ACEMAC</TD><TD><I>Acer macrophyllum</I></TD>            <TD>Bigleaf maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  3</TD></TR>
+<TR><TD>ACENEG</TD><TD><I>Acer negundo</I></TD>                 <TD>Boxelder</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 13</TD></TR>
+<TR><TD>ACENIG</TD><TD><I>Acer nigrum</I></TD>                  <TD>Black maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>ACEPEN</TD><TD><I>Acer pensylvanicum</I></TD>           <TD>Striped maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>ACERUB</TD><TD><I>Acer rubrum</I></TD>                  <TD>Red maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  7</TD></TR>
+<TR><TD>ACESACI</TD><TD><I>Acer saccharinum</I></TD>             <TD>Silver maple</TD>
+    <TD ALIGN=CENTER> 1</TD><TD ALIGN=CENTER>  10</TD></TR>
+<TR><TD>ACESACU</TD><TD><I>Acer saccharum</I></TD>               <TD>Sugar maple</TD>
+    <TD ALIGN=CENTER> 1</TD><TD ALIGN=CENTER>  12</TD></TR>
+<TR><TD>ACESPI</TD><TD><I>Acer spicatum</I></TD>                <TD>Mountain maple</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>ACESPP</TD><TD><I>Acer species</I></TD>                 <TD>Maples</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>AESGLA</TD><TD><I>Aesculus glabra</I></TD>              <TD>Ohio buckeye</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>AESOCT</TD><TD><I>Aesculus octandra</I></TD>            <TD>Yellow buckeye</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>AILALT</TD><TD><I>Ailanthus altissima</I></TD>          <TD>Ailanthus</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>ALNRHO</TD><TD><I>Alnus rhombifolia</I></TD>            <TD>White alder</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 35</TD></TR>
+<TR><TD>ALNRUB</TD><TD><I>Alnus rubra</I></TD>                  <TD>Red alder</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  5</TD></TR>
+<TR><TD>AMEARB</TD><TD><I>Amelanchier arborea</I></TD>          <TD>Serviceberry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>ARBMEN</TD><TD><I>Arbutus menziesii</I></TD>            <TD>Pacific madrone</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 34</TD></TR>
+<TR><TD>BETALL</TD><TD><I>Betula alleghaniensis</I></TD>        <TD>Yellow birch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>BETLEN</TD><TD><I>Betula lenta</I></TD>                 <TD>Sweet birch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>BETNIG</TD><TD><I>Betula nigra</I></TD>                 <TD>River birch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>BETOCC</TD><TD><I>Betula occidentalis</I></TD>          <TD>Water birch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>BETPAP</TD><TD><I>Betula papyrifera</I></TD>            <TD>Paper birch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  6</TD></TR>
+<TR><TD>BETSPP</TD><TD><I>Betula species </I></TD>              <TD>Birches</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>CELOCC</TD><TD><I>Celtis occidentalis</I></TD>          <TD>Hackberry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>CARAQU</TD><TD><I>Carya aquatica</I></TD>               <TD>Water hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>CARCAR</TD><TD><I>Carpinus caroliniana</I></TD>         <TD>American hornbeam</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>CARCOR</TD><TD><I>Carya cordiformis</I></TD>            <TD>Bitternut hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>CARGLA</TD><TD><I>Carya glabra</I></TD>                 <TD>Pignut hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>CARILL</TD><TD><I>Carya illinoensis</I></TD>            <TD>Pecan</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>CARLAC</TD><TD><I>Carya laciniosa</I></TD>              <TD>Shellbark hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>CAROVA</TD><TD><I>Carya ovata</I></TD>                  <TD>Shagbark hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>CARSPP</TD><TD><I>Carya species</I></TD>                <TD>Hickories</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 23</TD></TR>
+<TR><TD>CARTEX</TD><TD><I>Carya texana</I></TD>                 <TD>Black hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>CARTOM</TD><TD><I>Carya tomentosa</I></TD>              <TD>Mockernut hickory</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>CASCHR</TD><TD><I>Castanopsis chrysophylla</I></TD>     <TD>Golden chinkapin</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>CASDEN</TD><TD><I>Castanea dentata</I></TD>             <TD>American chestnut</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>CATSPP</TD><TD><I>Catalpa species</I></TD>              <TD>Catalpas</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>CELLAE</TD><TD><I>Celtis laevigata</I></TD>             <TD>Sugarberry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>CERCAN</TD><TD><I>Cercis canadensis</I></TD>            <TD>Eastern redbud</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>CHALAW</TD><TD><I>Chamaecyparis lawsoniana</I></TD>     <TD>Port-Orford-cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 39</TD></TR>
+<TR><TD>CHANOO</TD><TD><I>Chamaecyparis nootkatenis</I></TD>    <TD>Alaska-cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  2</TD></TR>
+<TR><TD>CHATHY</TD><TD><I>Chamaecyparis thyoides</I></TD>       <TD>Atlantic white-cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>CORFLO</TD><TD><I>Cornus florida</I></TD>               <TD>Flowering dogwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>CORNUT</TD><TD><I>Cornus nuttallii</I></TD>             <TD>Pacific dogwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 35</TD></TR>
+<TR><TD>CORSPP</TD><TD><I>Cornus species</I></TD>               <TD>Dogwoods</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>CRADOU</TD><TD><I>Crataegus douglasii</I></TD>          <TD>Black hawthorn</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>CRASPPW</TD><TD><I>Crataegus species</I></TD>            <TD>Hawthorns (western US)</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 35</TD></TR>
+<TR><TD>CRASPPE</TD><TD><I>Crataegus species</I></TD>            <TD>Hawthorns (eastern US)</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>DIOVIR</TD><TD><I>Diospyros virginiana</I></TD>         <TD>Persimmon</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>FAGGRA</TD><TD><I>Fagus grandifolia</I></TD>            <TD>American beech</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>FRAAMA</TD><TD><I>Fraxinus americana</I></TD>           <TD>White ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>FRANIG</TD><TD><I>Fraxinus nigra</I></TD>               <TD>Black ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>FRAPEN</TD><TD><I>Fraxinus pennsylvanica</I></TD>       <TD>Green ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>FRAPRO</TD><TD><I>Fraxinus profunda</I></TD>            <TD>Pumpkin ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>FRAQUA</TD><TD><I>Fraxinus quadrangulata</I></TD>       <TD>Blue ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>FRASPP</TD><TD><I>Fraxinus species</I></TD>             <TD>Ashes</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>GLETRI</TD><TD><I>Gleditsia triacanthos</I></TD>        <TD>Honeylocust</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>GORLAS</TD><TD><I>Gordonia lasianthus</I></TD>          <TD>Loblolly bay</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>GYMDIO</TD><TD><I>Gymnocladus dioicus</I></TD>          <TD>Kentucky coffeetree</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>HALSPP</TD><TD><I>Halesia species</I></TD>              <TD>Silverbells</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>ILEOPA</TD><TD><I>Ilex opaca</I></TD>                   <TD>American holly</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>JUGCIN</TD><TD><I>Juglans cinerea</I></TD>              <TD>Butternut</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>JUGNIG</TD><TD><I>Juglans nigra</I></TD>                <TD>Black walnut</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>JUNOCC</TD><TD><I>Juniperus occidentalis</I></TD>       <TD>Western juniper</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>JUNSPP</TD><TD><I>Juniperus species</I></TD>            <TD>Junipers/Redcedars</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>JUNVIR</TD><TD><I>Juniperus virginiana</I></TD>         <TD>Eastern red cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>LARLAR</TD><TD><I>Larix laricina</I></TD>               <TD>Tamarack</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>LARLYA</TD><TD><I>Larix lyallii</I></TD>                <TD>Subalpine larch</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>LAROCC</TD><TD><I>Larix occidentalis</I></TD>           <TD>Western larch</TD>
+    <TD ALIGN=CENTER>  12</TD>
+    <TD ALIGN=CENTER> 36</TD></TR>
+<TR><TD>LIBDEC</TD><TD><I>Libocedrus decurrens</I></TD>         <TD>Incense cedar</TD>
+    <TD ALIGN=CENTER> 6  </TD>
+    <TD ALIGN=CENTER> 34</TD></TR>
+<TR><TD>LIQSTY</TD><TD><I>Liquidambar styraciflua</I></TD>      <TD>Sweetgum</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>LIRTUL</TD><TD><I>Liriodendron tulipifera</I></TD>      <TD>Yellow poplar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>LITDEN</TD><TD><I>Lithocarpus densiflorus</I></TD>      <TD>Tanoak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 30</TD></TR>
+<TR><TD>MACPOM</TD><TD><I>Maclura pomifera</I></TD>             <TD>Osage orange</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>MAGACU</TD><TD><I>Magnolia acuminata</I></TD>           <TD>Cucumbertree</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>MAGGRA</TD><TD><I>Magnolia grandiflora</I></TD>         <TD>Southern magnolia</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>MAGMAC</TD><TD><I>Magnolia macrophylla</I></TD>         <TD>Bigleaf magnolia</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>MAGSPP</TD><TD><I>Magnolia species</I></TD>             <TD>Magnolias</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>MAGVIR</TD><TD><I>Magnolia virginiana</I></TD>          <TD>Sweetbay</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>MALPRU</TD><TD><I>Malus/Prunus species</I></TD>         <TD>Apples/Cherries</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>MALSPP</TD><TD><I>Malus species</I></TD>                <TD>Apples</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>MORALB</TD><TD><I>Morus alba</I></TD>                   <TD>White mulberry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>MORRUB</TD><TD><I>Morus rubra</I></TD>                  <TD>Red mulberry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>MORSPP</TD><TD><I>Morus species</I></TD>                <TD>Mulberries</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>NYSAQU</TD><TD><I>Nyssa aquatica</I></TD>               <TD>Water tupelo</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>NYSOGE</TD><TD><I>Nyssa ogache</I></TD>                 <TD>Ogeechee tupelo</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>NYSSPP</TD><TD><I>Nyssa species</I></TD>                <TD>Tupelos</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>NYSSYL</TD><TD><I>Nyssa sylvatica</I></TD>              <TD>Black tupelo</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>NYSSYLB</TD><TD><I>Nyssa sylvatica</I> var. biflora</TD> <TD>Swamp tupelo</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>OSTVIR</TD><TD><I>Ostrya virginiana</I></TD>            <TD>Eastern hophornbeam</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>OXYARB</TD><TD><I>Oxydendrum arboreum</I></TD>          <TD>Sourwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>PAUTOM</TD><TD><I>Paulownia tomentosa</I></TD>          <TD>Paulownia</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>PERBOR</TD><TD><I>Persea borbonia</I></TD>              <TD>Redbay</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>PICABI</TD><TD><I>Picea abies</I></TD>                  <TD>Norway spruce</TD>
+    <TD ALIGN=CENTER> 3  </TD>
+    <TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>PICENG</TD><TD><I>Picea engelmannii</I></TD>            <TD>Engelmann spruce</TD>
+    <TD ALIGN=CENTER> 9  </TD>
+    <TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>PICGLA</TD><TD><I>Picea glauca</I></TD>                 <TD>White spruce</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>PICMAR</TD><TD><I>Picea mariana</I></TD>                <TD>Black spruce</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER> 11</TD></TR>
+<TR><TD>PICPUN</TD><TD><I>Picea pungens</I></TD>                <TD>Blue spruce</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>PICRUB</TD><TD><I>Picea rubens</I></TD>                 <TD>Red spruce</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER> 13</TD></TR>
+<TR><TD>PICSIT</TD><TD><I>Picea sitchensis</I></TD>             <TD>Sitka spruce</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER>  6</TD></TR>
+<TR><TD>PICSPP</TD><TD><I>Picea species</I></TD>                <TD>Spruces</TD>
+    <TD ALIGN=CENTER>  3</TD><TD ALIGN=CENTER> 13</TD></TR>
+<TR><TD>PINALB</TD><TD><I>Pinus albicaulis</I></TD>             <TD>Whitebark pine</TD>
+    <TD ALIGN=CENTER>  13</TD>
+    <TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PINATT</TD><TD><I>Pinus attenuata</I></TD>              <TD>Knobcone pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PINBAN</TD><TD><I>Pinus banksiana</I></TD>              <TD>Jack pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>PINCLA</TD><TD><I>Pinus clausa</I></TD>                 <TD>Sand pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>PINCON</TD><TD><I>Pinus contorta</I></TD>               <TD>Lodgepole pine</TD>
+    <TD ALIGN=CENTER>  13</TD>
+    <TD ALIGN=CENTER>  7</TD></TR>
+<TR><TD>PINECH</TD><TD><I>Pinus echinata</I></TD>               <TD>Shortleaf pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>PINELL</TD><TD><I>Pinus elliottii</I></TD>              <TD>Slash pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 31</TD></TR>
+<TR><TD>PINFLE</TD><TD><I>Pinus flexilis</I></TD>               <TD>Limber pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PINGLA</TD><TD><I>Pinus glabra</I></TD>                 <TD>Spruce pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>PINJEF</TD><TD><I>Pinus jeffreyi</I></TD>               <TD>Jeffrey pine</TD>
+    <TD ALIGN=CENTER> 10  </TD>
+    <TD ALIGN=CENTER> 37</TD></TR>
+<TR><TD>PINLAM</TD><TD><I>Pinus lambertiana</I></TD>            <TD>Sugar pine</TD>
+    <TD ALIGN=CENTER> 7  </TD>
+    <TD ALIGN=CENTER> 38</TD></TR>
+<TR><TD>PINMON</TD><TD><I>Pinus monticola</I></TD>              <TD>Western white pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>PINPAL</TD><TD><I>Pinus palustrus</I></TD>              <TD>Longleaf pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 28</TD></TR>
+<TR><TD>PINPON</TD><TD><I>Pinus ponderosa</I></TD>              <TD>Ponderosa pine</TD>
+    <TD ALIGN=CENTER> 10  </TD>
+    <TD ALIGN=CENTER> 36</TD></TR>
+<TR><TD>PINPUN</TD><TD><I>Pinus pungens</I></TD>                <TD>Table mountain pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>PINRES</TD><TD><I>Pinus resinosa</I></TD>               <TD>Red pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>PINRIG</TD><TD><I>Pinus rigida</I></TD>                 <TD>Pitch pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>PINSAB</TD><TD><I>Pinus sabiniana</I></TD>              <TD>Digger pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>PINSER</TD><TD><I>Pinus serotina</I></TD>               <TD>Pond pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 35</TD></TR>
+<TR><TD>PINSPP</TD><TD><I>Pinus species</I></TD>                <TD>Pines</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PINSTR</TD><TD><I>Pinus strobus</I></TD>                <TD>Eastern white pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>PINSYL</TD><TD><I>Pinus sylvestris</I></TD>             <TD>Scotch pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PINTAE</TD><TD><I>Pinus taeda</I></TD>                  <TD>Loblolly pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 30</TD></TR>
+<TR><TD>PINVIR</TD><TD><I>Pinus virginiana</I></TD>             <TD>Virginia pine</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>PLAOCC</TD><TD><I>Plantus occidentalis</I></TD>         <TD>American sycamore</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>POPBAL</TD><TD><I>Populus balsamifera</I></TD>          <TD>Balsam poplar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>POPDEL</TD><TD><I>Populus deltoides</I></TD>            <TD>Eastern cottonwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>POPGRA</TD><TD><I>Populus grandidentata</I></TD>        <TD>Bigtooth aspen</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>POPHET</TD><TD><I>Populus heterophylla</I></TD>         <TD>Swamp cottonwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>POPSPP</TD><TD><I>Populus species</I></TD>              <TD>Poplars</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>POPTRI</TD><TD><I>Populus trichocarpa</I></TD>          <TD>Black cottonwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 23</TD></TR>
+<TR><TD>PRUAME</TD><TD><I>Prunus americana</I></TD>             <TD>American plum</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>PRUEMA</TD><TD><I>Prunus emarginata</I></TD>            <TD>Bitter cherry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 35</TD></TR>
+<TR><TD>PRUDEN</TD><TD><I>Prunus pensylvanica</I></TD>          <TD>Pin cherry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>PRUSER</TD><TD><I>Prunus serotina</I></TD>              <TD>Black cherry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>PRUSPP</TD><TD><I>Prunus species</I></TD>               <TD>Cherries</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>PRUVIR</TD><TD><I>Prunus virginiana</I></TD>            <TD>Chokecherry</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>PSEMEN</TD><TD><I>Pseudotsuga menziesii</I></TD>        <TD>Douglas-fir</TD>
+    <TD ALIGN=CENTER>  11</TD>
+    <TD ALIGN=CENTER> 36</TD></TR>
+<TR><TD>QUEAGR</TD><TD><I>Quercus agrifolia</I></TD>            <TD>Coast live oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>QUEALB</TD><TD><I>Quercus alba</I></TD>                 <TD>White oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>QUEBIC</TD><TD><I>Quercus bicolor</I></TD>              <TD>Swamp white oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>QUECHR</TD><TD><I>Quercus chrysolepis</I></TD>          <TD>Canyon live oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  3</TD></TR>
+<TR><TD>QUEOCC</TD><TD><I>Quercus coccinea</I></TD>             <TD>Scarlet oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>QUEDOU</TD><TD><I>Quercus douglasii</I></TD>            <TD>Blue oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>QUEELL</TD><TD><I>Quercus ellipsoidalis</I></TD>        <TD>Northern pin oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>QUEENG</TD><TD><I>Quercus engelmannii</I></TD>          <TD>Engelmann oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 33</TD></TR>
+<TR><TD>QUEFAL</TD><TD><I>Quercus falcata</I></TD>              <TD>Southern red oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 23</TD></TR>
+<TR><TD>QUEGAR</TD><TD><I>Quercus garryana</I></TD>             <TD>Oregon white oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  8</TD></TR>
+<TR><TD>QUEIMB</TD><TD><I>Quercus imbricaria</I></TD>           <TD>Shingle oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>QUEINC</TD><TD><I>Quercus incana</I></TD>               <TD>Bluejack oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>QUEKEL</TD><TD><I>Quercus kellogii</I></TD>             <TD>Califonia black oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>QUELAE</TD><TD><I>Quercus laevis</I></TD>               <TD>Turkey oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>QUELAU</TD><TD><I>Quercus laurifolia</I></TD>           <TD>Laurel oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>QUELOB</TD><TD><I>Quercus lobata</I></TD>               <TD>California white oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>QUELYR</TD><TD><I>Quercus lyrata</I></TD>               <TD>Overcup oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>QUEMAC</TD><TD><I>Quercus macrocarpa</I></TD>           <TD>Bur oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>QUEMAR</TD><TD><I>Quercus marilandica</I></TD>          <TD>Blackjack oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>QUEMIC</TD><TD><I>Quercus michauxii</I></TD>            <TD>Swamp chestnut oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 25</TD></TR>
+<TR><TD>QUEMUE</TD><TD><I>Quercus muehlenbergii</I></TD>        <TD>Chinkapin oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>QUENIG</TD><TD><I>Quercus nigra</I></TD>                <TD>Water oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 15</TD></TR>
+<TR><TD>QUENUT</TD><TD><I>Quercus nuttallii</I></TD>            <TD>Nuttall oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  9</TD></TR>
+<TR><TD>QUEPAL</TD><TD><I>Quercus palustris</I></TD>            <TD>Pin oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>QUEPHE</TD><TD><I>Quercus phellos</I></TD>              <TD>Willow oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>QUEPRI</TD><TD><I>Quercus prinus</I></TD>               <TD>Chestnut oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 28</TD></TR>
+<TR><TD>QUERUB</TD><TD><I>Quercus rubra</I></TD>                <TD>Northern red oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>QUESHU</TD><TD><I>Quercus shumardii</I></TD>            <TD>Shumard oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 16</TD></TR>
+<TR><TD>QUESPP</TD><TD><I>Quercus species</I></TD>              <TD>Oaks</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>QUESTE</TD><TD><I>Quercus stellata</I></TD>             <TD>Post oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 23</TD></TR>
+<TR><TD>QUEVEL</TD><TD><I>Quercus velutina</I></TD>             <TD>Black oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 24</TD></TR>
+<TR><TD>QUEVIR</TD><TD><I>Quercus virginiana</I></TD>           <TD>Live oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 22</TD></TR>
+<TR><TD>QUEWIS</TD><TD><I>Quercus wislizenii</I></TD>           <TD>Interior live oak</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 13</TD></TR>
+<TR><TD>ROBPSE</TD><TD><I>Robinia pseudoacacia</I></TD>         <TD>Black locust</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 28</TD></TR>
+<TR><TD>SALDIA</TD><TD><I>Salix bebbiana</I></TD>               <TD>Diamond willow</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>SALNIG</TD><TD><I>Salix nigra</I></TD>                  <TD>Black willow</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>SALSPP</TD><TD><I>Salix species</I></TD>                <TD>Willows</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 20</TD></TR>
+<TR><TD>SASALB</TD><TD><I>Sassafras albidum</I></TD>            <TD>Sassafras</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>SEQGIG</TD><TD><I>Sequoiadendron giganteum</I></TD>     <TD>Giant sequoia</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 39</TD></TR>
+<TR><TD>SEQSEM</TD><TD><I>Sequoia sempervirens</I></TD>         <TD>Redwood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 39</TD></TR>
+<TR><TD>SORAME</TD><TD><I>Sorbus americana</I></TD>             <TD>American mountain ash</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>TAXBRE</TD><TD><I>Taxus brevifolia</I></TD>             <TD>Pacific yew</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>TAXDIS</TD><TD><I>Taxodium distichum</I></TD>           <TD>Baldcypress</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>TAXDISN</TD><TD><I>Taxodium distictum var. nutans</I></TD><TD>Pondcypress</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 21</TD></TR>
+<TR><TD>THUOCC</TD><TD><I>Thuja occidentalis</I></TD>           <TD>Northern white cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  4</TD></TR>
+<TR><TD>THUPLI</TD><TD><I>Thuja plicata</I></TD>                <TD>Western red cedar</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 14</TD></TR>
+<TR><TD>THUSPP</TD><TD><I>Thuja species</I></TD>                <TD>Arborvitae</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>TILAME</TD><TD><I>Tilia americana</I></TD>              <TD>American basswood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>TILHET</TD><TD><I>Tilia heterophylla</I></TD>           <TD>White basswood</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 29</TD></TR>
+<TR><TD>TSUCAN</TD><TD><I>Tsuga canadensis</I></TD>             <TD>Eastern hemlock</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>TSUHET</TD><TD><I>Tsuga heterophylla</I></TD>           <TD>Western hemlock</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>TSUMER</TD><TD><I>Tsuga mertensiana</I></TD>            <TD>Mountain hemlock</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 19</TD></TR>
+<TR><TD>ULMALA</TD><TD><I>Ulmus alata</I></TD>                  <TD>Winged elm</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>ULMAME</TD><TD><I>Ulmus americana</I></TD>              <TD>American elm</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 10</TD></TR>
+<TR><TD>ULMPUM</TD><TD><I>Ulmus pumila</I></TD>                 <TD>Siberian elm</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 17</TD></TR>
+<TR><TD>ULMRUB</TD><TD><I>Ulmus rubra</I></TD>                  <TD>Slippery elm</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 11</TD></TR>
+<TR><TD>ULMSPP</TD><TD><I>Ulmus species</I></TD>                <TD>Elms</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 18</TD></TR>
+<TR><TD>ULMTHO</TD><TD><I>Ulmus thomasii</I></TD>               <TD>Rock elm</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER> 12</TD></TR>
+<TR><TD>UMBCAL</TD><TD><I>Umbellularia californica</I></TD>     <TD>California laurel</TD>
+    <TD ALIGN=CENTER>  1</TD><TD ALIGN=CENTER>  5</TD></TR>
+</TABLE>
+<P><P>
+<A NAME="Table4"></a>
+  <B>Bark Thickness Equations </B><br>
+<TABLE border="1" cellspacing="0" cellpadding="3">
+  <TR bgcolor="#CCCCCC"><TH ALIGN=LEFT>Bark <br>Equation</TH><TH ALIGN=CENTER>Equation</TH></TR>
+<TR><TD>01</TD><TD>BT = 0.019 x DBH</TD></TR>
+<TR><TD>02</TD><TD>BT = 0.022 x DBH</TD></TR>
+<TR><TD>03</TD><TD>BT = 0.024 x DBH</TD></TR>
+<TR><TD>04</TD><TD>BT = 0.025 x DBH</TD></TR>
+<TR><TD>05</TD><TD>BT = 0.026 x DBH</TD></TR>
+<TR><TD>06</TD><TD>BT = 0.027 x DBH</TD></TR>
+<TR><TD>07</TD><TD>BT = 0.028 x DBH</TD></TR>
+<TR><TD>08</TD><TD>BT = 0.029 x DBH</TD></TR>
+<TR><TD>09</TD><TD>BT = 0.030 x DBH</TD></TR>
+<TR><TD>10</TD><TD>BT = 0.031 x DBH</TD></TR>
+<TR><TD>11</TD><TD>BT = 0.032 x DBH</TD></TR>
+<TR><TD>12</TD><TD>BT = 0.033 x DBH</TD></TR>
+<TR><TD>13</TD><TD>BT = 0.034 x DBH</TD></TR>
+<TR><TD>14</TD><TD>BT = 0.035 x DBH</TD></TR>
+<TR><TD>15</TD><TD>BT = 0.036 x DBH</TD></TR>
+<TR><TD>16</TD><TD>BT = 0.037 x DBH</TD></TR>
+<TR><TD>17</TD><TD>BT = 0.038 x DBH</TD></TR>
+<TR><TD>18</TD><TD>BT = 0.039 x DBH</TD></TR>
+<TR><TD>19</TD><TD>BT = 0.040 x DBH</TD></TR>
+<TR><TD>20</TD><TD>BT = 0.041 x DBH</TD></TR>
+<TR><TD>21</TD><TD>BT = 0.042 x DBH</TD></TR>
+<TR><TD>22</TD><TD>BT = 0.043 x DBH</TD></TR>
+<TR><TD>23</TD><TD>BT = 0.044 x DBH</TD></TR>
+<TR><TD>24</TD><TD>BT = 0.045 x DBH</TD></TR>
+<TR><TD>25</TD><TD>BT = 0.046 x DBH</TD></TR>
+<TR><TD>26</TD><TD>BT = 0.047 x DBH</TD></TR>
+<TR><TD>27</TD><TD>BT = 0.048 x DBH</TD></TR>
+<TR><TD>28</TD><TD>BT = 0.049 x DBH</TD></TR>
+<TR><TD>29</TD><TD>BT = 0.050 x DBH</TD></TR>
+<TR><TD>30</TD><TD>BT = 0.052 x DBH</TD></TR>
+<TR><TD>31</TD><TD>BT = 0.055 x DBH</TD></TR>
+<TR><TD>32</TD><TD>BT = 0.057 x DBH</TD></TR>
+<TR><TD>33</TD><TD>BT = 0.059 x DBH</TD></TR>
+<TR><TD>34</TD><TD>BT = 0.060 x DBH</TD></TR>
+<TR><TD>35</TD><TD>BT = 0.062 x DBH</TD></TR>
+<TR><TD>36</TD><TD>BT = 0.065 x DBH</TD></TR>
+<TR><TD>37</TD><TD>BT = 0.068 x DBH</TD></TR>
+<TR><TD>38</TD><TD>BT = 0.072 x DBH</TD></TR>
+<TR><TD>39</TD><TD>BT = 0.081 x DBH</TD></TR>
+</TABLE>
+<P>
+<H3><FONT COLOR="#ff5500">See Also</FONT></H3>
+<UL>
+    <LI><A HREF="vTreeBarkThickness.html">Bark Thickness</A></LI>
+    <LI><A HREF="vTreeDbh.html">D.B.H.</A></LI>
+    <LI><A HREF="vTreeSpecies.html">Mortality Tree Species</A></LI>
+    <LI><A HREF="vTreeSpeciesSpot.html">Spot Tree Species</A></LI>
+    <LI><A HREF="vTreeMortalityRate.html">Probability of Mortality</A></LI>
+</UL>
+<P>
+<H3><FONT COLOR="#ff5500">Links</FONT></H3>
+  <UL>
+      <LI><A HREF="variableIndex.html">Variable Index</A></LI>
+      <LI><A HREF="figureIndex.html">Figure Index</A></LI>
+      <LI><A HREF="tablesIndex.html">Table Index</A></LI>
+      <LI><A HREF="guideIndex.html">Guide Index</A></LI>
+      <LI><A HREF="Models_BehavePlus.html">Table of References</A></LI>
+  </UL>
+ 
+<HR><FONT SIZE=2>BehavePlus On-Line Documentation, May 23, 2010.</FONT>
+</BODY>
+</HTML>
